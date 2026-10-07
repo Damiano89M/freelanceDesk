@@ -19,7 +19,7 @@ class ClientController extends Controller
             $search = $request->string('search')->toString();
             $query->where(function ($query) use ($search) {
                 $query->where('name', 'like', "%{$search}%")
-                ->orWhere('comapany', 'like', "%{$search}%")
+                ->orWhere('company', 'like', "%{$search}%")
                 ->orWhere('email', 'like', "%{$search}%");
             });
         })->latest()->paginate(20);
